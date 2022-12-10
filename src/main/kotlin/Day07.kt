@@ -54,9 +54,7 @@ fun main() {
         val directory = parseData(input)
 
         for (i in directory.indices) {
-            var relative = 0
-            relative = sumDirSizes(directory[i])
-            println("key => ${directory[i].name} // relative => $relative")
+            var relative = sumDirSizes(directory[i])
             if (relative <= 100000) {
                 result += relative
             }
@@ -72,7 +70,6 @@ fun main() {
 
         for (i in directory.indices) {
             val dirSize = sumDirSizes(directory[i])
-            println("key => ${directory[i].name} // dirSize => $dirSize")
             if (dirSize > needMem && result != 0) {
                 result = min(result, dirSize)
             } else if (dirSize > needMem) {
